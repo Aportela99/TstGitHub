@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LambdaConverters.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:LambdaConverters.ConverterErrorStrategy">
+            <summary>
+            Defines the converter error strategy.
+            </summary>
+        </member>
+        <member name="F:LambdaConverters.ConverterErrorStrategy.ReturnDefaultValue">
+            <summary>
+            The default value of the specified target type is returned.
+            </summary>
+        </member>
+        <member name="F:LambdaConverters.ConverterErrorStrategy.UseFallbackOrDefaultValue">
+            <summary>
+            No value is returned, but the binding is instructed use the <see cref="P:System.Windows.Data.BindingBase.FallbackValue"/>, if available, or the default target 
+            property value.
+            </summary>
+        </member>
+        <member name="F:LambdaConverters.ConverterErrorStrategy.DoNothing">
+            <summary>
+            No value is returned and the binding is instructed not to use the <see cref="P:System.Windows.Data.BindingBase.FallbackValue"/> or the default target property 
+            value.
+            </summary>
+        </member>
+        <member name="T:LambdaConverters.MultiValueConverter">
+            <summary>
+            A factory class used to create lambda-based instances of the <see cref="T:System.Windows.Data.IMultiValueConverter"/> interface.
+            </summary>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverter.Create``2(System.Func{LambdaConverters.MultiValueConverterArgs{``0},``1},System.Func{LambdaConverters.ValueConverterArgs{``1},System.Collections.Generic.IEnumerable{``0}},LambdaConverters.ConverterErrorStrategy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Data.IMultiValueConverter" /> interface.
+            </summary>
+            <typeparam name="I">The input value type.</typeparam>
+            <typeparam name="O">The output value type.</typeparam>
+            <param name="convertFunction">The <see cref="T:System.Convert" /> method.</param>
+            <param name="convertBackFunction">The <see cref="M:System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" /> method.</param>
+            <param name="errorStrategy">The error strategy.</param>
+            <returns>An <see cref="T:System.Windows.Data.IMultiValueConverter" /> object.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="errorStrategy"/> is not a valid <see cref="T:LambdaConverters.ConverterErrorStrategy"/> value.
+            </exception>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverter.Create``3(System.Func{LambdaConverters.MultiValueConverterArgs{``0,``2},``1},System.Func{LambdaConverters.ValueConverterArgs{``1,``2},System.Collections.Generic.IEnumerable{``0}},LambdaConverters.ConverterErrorStrategy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Data.IMultiValueConverter" /> interface.
+            </summary>
+            <typeparam name="I">The input value type.</typeparam>
+            <typeparam name="O">The output value type.</typeparam>
+            <typeparam name="P">The converter parameter type.</typeparam>
+            <param name="convertFunction">The <see cref="T:System.Convert" /> method.</param>
+            <param name="convertBackFunction">The <see cref="M:System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" /> method.</param>
+            <param name="errorStrategy">The error strategy.</param>
+            <returns>An <see cref="T:System.Windows.Data.IMultiValueConverter" /> object.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="errorStrategy"/> is not a valid <see cref="T:LambdaConverters.ConverterErrorStrategy"/> value.
+            </exception>
+        </member>
+        <member name="T:LambdaConverters.MultiValueConverterArgs`2">
+            <summary>
+            Provides data for parameterized conversion functions.
+            </summary>
+            <typeparam name="T">The value type.</typeparam>
+            <typeparam name="P">The parameter type.</typeparam>
+        </member>
+        <member name="P:LambdaConverters.MultiValueConverterArgs`2.Values">
+            <summary>
+            Gets the values.
+            </summary>
+        </member>
+        <member name="P:LambdaConverters.MultiValueConverterArgs`2.Parameter">
+            <summary>
+            Gets the parameter.
+            </summary>
+        </member>
+        <member name="P:LambdaConverters.MultiValueConverterArgs`2.Culture">
+            <summary>
+            Gets the culture.
+            </summary>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverterArgs`2.op_Equality(LambdaConverters.MultiValueConverterArgs{`0,`1},LambdaConverters.MultiValueConverterArgs{`0,`1})">
+            <summary>
+            Implements the operator <c>==</c>.
+            </summary>
+            <param name="x">The left operand.</param>
+            <param name="y">The right operand.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverterArgs`2.op_Inequality(LambdaConverters.MultiValueConverterArgs{`0,`1},LambdaConverters.MultiValueConverterArgs{`0,`1})">
+            <summary>
+            Implements the operator <c>!=</c>.
+            </summary>
+            <param name="x">The left operand.</param>
+            <param name="y">The right operand.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverterArgs`2.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverterArgs`2.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverterArgs`2.Equals(LambdaConverters.MultiValueConverterArgs{`0,`1})">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns><c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:LambdaConverters.MultiValueConverterArgs`1">
+            <summary>
+            Provides data for conversion functions.
+            </summary>
+            <typeparam name="T">The value type.</typeparam>
+        </member>
+        <member name="P:LambdaConverters.MultiValueConverterArgs`1.Values">
+            <summary>
+            Gets the values.
+            </summary>
+        </member>
+        <member name="P:LambdaConverters.MultiValueConverterArgs`1.Culture">
+            <summary>
+            Gets the culture.
+            </summary>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverterArgs`1.op_Equality(LambdaConverters.MultiValueConverterArgs{`0},LambdaConverters.MultiValueConverterArgs{`0})">
+            <summary>
+            Implements the operator <c>==</c>.
+            </summary>
+            <param name="x">The left operand.</param>
+            <param name="y">The right operand.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverterArgs`1.op_Inequality(LambdaConverters.MultiValueConverterArgs{`0},LambdaConverters.MultiValueConverterArgs{`0})">
+            <summary>
+            Implements the operator <c>!=</c>.
+            </summary>
+            <param name="x">The left operand.</param>
+            <param name="y">The right operand.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverterArgs`1.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverterArgs`1.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:LambdaConverters.MultiValueConverterArgs`1.Equals(LambdaConverters.MultiValueConverterArgs{`0})">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns><c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:LambdaConverters.ValueConverter">
+            <summary>
+            A factory class used to create lambda-based instances of the <see cref="T:System.Windows.Data.IValueConverter"/> interface.
+            </summary>
+        </member>
+        <member name="M:LambdaConverters.ValueConverter.Create``2(System.Func{LambdaConverters.ValueConverterArgs{``0},``1},System.Func{LambdaConverters.ValueConverterArgs{``1},``0},LambdaConverters.ConverterErrorStrategy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Data.IValueConverter" /> interface.
+            </summary>
+            <typeparam name="I">The input value type.</typeparam>
+            <typeparam name="O">The output value type.</typeparam>
+            <param name="convertFunction">The <see cref="M:System.Windows.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" /> method.</param>
+            <param name="convertBackFunction">The <see cref="M:System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" /> method.</param>
+            <param name="errorStrategy">The error strategy.</param>
+            <returns>An <see cref="T:System.Windows.Data.IValueConverter" /> object.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="errorStrategy"/> is not a valid <see cref="T:LambdaConverters.ConverterErrorStrategy"/> value.
+            </exception>
+        </member>
+        <member name="M:LambdaConverters.ValueConverter.Create``3(System.Func{LambdaConverters.ValueConverterArgs{``0,``2},``1},System.Func{LambdaConverters.ValueConverterArgs{``1,``2},``0},LambdaConverters.ConverterErrorStrategy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Data.IValueConverter" /> interface.
+            </summary>
+            <typeparam name="I">The input value type.</typeparam>
+            <typeparam name="O">The output value type.</typeparam>
+            <typeparam name="P">The converter parameter type.</typeparam>
+            <param name="convertFunction">The <see cref="M:System.Windows.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" /> method.</param>
+            <param name="convertBackFunction">The <see cref="M:System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" /> method.</param>
+            <param name="errorStrategy">The error strategy.</param>
+            <returns>An <see cref="T:System.Windows.Data.IValueConverter" /> object.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="errorStrategy"/> is not a valid <see cref="T:LambdaConverters.ConverterErrorStrategy"/> value.
+            </exception>
+        </member>
+        <member name="T:LambdaConverters.ValueConverterArgs`2">
+            <summary>
+            Provides data for parameterized conversion functions.
+            </summary>
+            <typeparam name="T">The value type.</typeparam>
+            <typeparam name="P">The parameter type.</typeparam>
+        </member>
+        <member name="P:LambdaConverters.ValueConverterArgs`2.Value">
+            <summary>
+            Gets the value.
+            </summary>
+        </member>
+        <member name="P:LambdaConverters.ValueConverterArgs`2.Parameter">
+            <summary>
+            Gets the parameter.
+            </summary>
+        </member>
+        <member name="P:LambdaConverters.ValueConverterArgs`2.Culture">
+            <summary>
+            Gets the culture.
+            </summary>
+        </member>
+        <member name="M:LambdaConverters.ValueConverterArgs`2.op_Equality(LambdaConverters.ValueConverterArgs{`0,`1},LambdaConverters.ValueConverterArgs{`0,`1})">
+            <summary>
+            Implements the operator <c>==</c>.
+            </summary>
+            <param name="x">The left operand.</param>
+            <param name="y">The right operand.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:LambdaConverters.ValueConverterArgs`2.op_Inequality(LambdaConverters.ValueConverterArgs{`0,`1},LambdaConverters.ValueConverterArgs{`0,`1})">
+            <summary>
+            Implements the operator <c>!=</c>.
+            </summary>
+            <param name="x">The left operand.</param>
+            <param name="y">The right operand.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:LambdaConverters.ValueConverterArgs`2.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:LambdaConverters.ValueConverterArgs`2.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:LambdaConverters.ValueConverterArgs`2.Equals(LambdaConverters.ValueConverterArgs{`0,`1})">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns><c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:LambdaConverters.ValueConverterArgs`1">
+            <summary>
+            Provides data for conversion functions.
+            </summary>
+            <typeparam name="T">The value type.</typeparam>
+        </member>
+        <member name="P:LambdaConverters.ValueConverterArgs`1.Value">
+            <summary>
+            Gets the value.
+            </summary>
+        </member>
+        <member name="P:LambdaConverters.ValueConverterArgs`1.Culture">
+            <summary>
+            Gets the culture.
+            </summary>
+        </member>
+        <member name="M:LambdaConverters.ValueConverterArgs`1.op_Equality(LambdaConverters.ValueConverterArgs{`0},LambdaConverters.ValueConverterArgs{`0})">
+            <summary>
+            Implements the operator <c>==</c>.
+            </summary>
+            <param name="x">The left operand.</param>
+            <param name="y">The right operand.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:LambdaConverters.ValueConverterArgs`1.op_Inequality(LambdaConverters.ValueConverterArgs{`0},LambdaConverters.ValueConverterArgs{`0})">
+            <summary>
+            Implements the operator <c>!=</c>.
+            </summary>
+            <param name="x">The left operand.</param>
+            <param name="y">The right operand.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:LambdaConverters.ValueConverterArgs`1.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:LambdaConverters.ValueConverterArgs`1.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:LambdaConverters.ValueConverterArgs`1.Equals(LambdaConverters.ValueConverterArgs{`0})">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns><c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.</returns>
+        </member>
+    </members>
+</doc>

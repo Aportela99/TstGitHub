@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>LambdaConverters</id>
+    <version>1.0.0</version>
+    <title>Lambda Converters</title>
+    <authors>Michael Damatov</authors>
+    <owners>Michael Damatov</owners>
+    <licenseUrl>https://github.com/michael-damatov/lambda-converters/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/michael-damatov/lambda-converters</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/michael-damatov/lambda-converters/master/Icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The library allows to write IValueConverter and IMultiValueConverter objects with the most convenient syntax available, ideally, using the lambda expressions.</description>
+    <summary>Strongly-typed lambda expressions as value converters</summary>
+    <tags>lambda expression converter strongly typed value multi</tags>
+  </metadata>
+</package>

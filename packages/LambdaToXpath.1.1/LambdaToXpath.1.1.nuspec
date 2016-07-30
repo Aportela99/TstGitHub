@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>LambdaToXpath</id>
+    <version>1.1</version>
+    <title>LambdaToXpath</title>
+    <authors>Helgevold Consulting, LLC</authors>
+    <owners>Helgevold Consulting, LLC</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/thelgevold/LambdaToXpath</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>LambdaToXpath lets you generate xpath expressions from C# Lambda expressions</description>
+    <summary>LambdaToXpath lets you generate xpath expressions from C# Lambda expressions</summary>
+    <language>es-US</language>
+    <tags>Xpath C# Lambda LINQ XML Selenium Webdriver</tags>
+  </metadata>
+</package>
